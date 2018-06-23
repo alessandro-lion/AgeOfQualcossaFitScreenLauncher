@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Form1));
             this.button1 = new System.Windows.Forms.Button();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.listBox1 = new System.Windows.Forms.ListBox();
@@ -80,6 +81,7 @@
             this.ClientSize = new System.Drawing.Size(480, 320);
             this.Controls.Add(this.groupBox1);
             this.Controls.Add(this.labelres);
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "Form1";
             this.Text = "Age Of Qualcossa Fit Screen Launcher - Powered by P. Lion to make children happy";
             this.Load += new System.EventHandler(this.Form1_Load);
