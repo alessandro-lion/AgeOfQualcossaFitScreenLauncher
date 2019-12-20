@@ -11,6 +11,6 @@ Download the zip and decompress the exe everywhere on your computer.
 
 Open it, the utility will identify the resolution of your primary screen. In case you need to switch screen do it before or eventually close and reopen the utility.
 
-Select one of the availables games from the list, Please note that the utility is supposing you installed everything using the defaul c:\program files (x86) folder and showing up only the available games.
+Select one of the availables games from the list, Please note that the utility is supposing you installed everything using the default c:\program files (x86) or c:\program files folder and showing up only the available games installed respectively on a Windows 7 x64 or Windows 7 32bit.
 
-Click the button to launch the game, it will be executed with additional arguments in order to fit best the screen you are using.
+Click the button to launch the game, it will be executed with additional arguments in order to adapt resolution to fit best the screen you are using.
