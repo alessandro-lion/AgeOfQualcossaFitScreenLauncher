@@ -15,6 +15,13 @@ namespace AgeOfQualcossaFitScreenLauncher
         private static string AOM = "C:\\Program Files (x86)\\Microsoft Games\\Age of Mythology\\aom.exe";
         private static string AOE2Conquer = "C:\\Program Files (x86)\\Microsoft Games\\Age of Empires II\\Age2_X1\\age2_x1.Exe";
         private static string AOE2 = "C:\\Program Files (x86)\\Microsoft Games\\Age of Empires II\\EMPIRES2.EXE";
+
+        private static string AOMXw32 = "C:\\Program Files\\Microsoft Games\\Age of Mythology\\aomx.exe";
+        private static string AOMw32 = "C:\\Program Files\\Microsoft Games\\Age of Mythology\\aom.exe";
+        private static string AOE2Conquerw32 = "C:\\Program Files\\Microsoft Games\\Age of Empires II\\Age2_X1\\age2_x1.Exe";
+        private static string AOE2w32 = "C:\\Program Files\\Microsoft Games\\Age of Empires II\\EMPIRES2.EXE";
+
+
         private StringCollection gamepath = new StringCollection();
         private StringCollection gamearg = new StringCollection();
         private int dx;
@@ -46,19 +53,25 @@ namespace AgeOfQualcossaFitScreenLauncher
             CheckAOGame("Age of Mythology Titan Expansion", AOMX, AOQresparm);
             CheckAOGame("Age of Empires II", AOE2, AO2resparm);
             CheckAOGame("Age of Empires II The Conquer", AOE2Conquer, AO2resparm);
+            CheckAOGame("Age of Mythology", AOMw32, AOQresparm);
+            CheckAOGame("Age of Mythology Titan Expansion", AOMXw32, AOQresparm);
+            CheckAOGame("Age of Empires II", AOE2w32, AO2resparm);
+            CheckAOGame("Age of Empires II The Conquer", AOE2Conquerw32, AO2resparm);
+
+
 
         }
-        private void CheckAOGame(string Title, string Path, string Arg)
+        private void CheckAOGame(string Title, string sPath, string Arg)
         {
             //If the game exist I add it to the Listbox on the form
             try
 
             { 
-            FileInfo sFile = new FileInfo(AOMX);
+            FileInfo sFile = new FileInfo(sPath);
             if (sFile.Exists)
             {
                 listBox1.Items.Add(Title);
-                gamepath.Add(Path);
+                gamepath.Add(sPath);
                 gamearg.Add(Arg);
             }
             }
