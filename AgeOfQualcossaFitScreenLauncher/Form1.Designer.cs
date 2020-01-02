@@ -44,7 +44,7 @@
             this.button1.TabIndex = 0;
             this.button1.Text = "boton che fa partire el zogo";
             this.button1.UseVisualStyleBackColor = true;
-            this.button1.Click += new System.EventHandler(this.button1_Click);
+            this.button1.Click += new System.EventHandler(this.Button1_Click);
             // 
             // groupBox1
             // 
@@ -55,7 +55,7 @@
             this.groupBox1.Size = new System.Drawing.Size(429, 286);
             this.groupBox1.TabIndex = 1;
             this.groupBox1.TabStop = false;
-            this.groupBox1.Text = "Seesiona soea lista e schicia el boton";
+            this.groupBox1.Text = "Seesiona qualcossa soea lista e fa un dopio clic o schicia el boton sotto";
             // 
             // listBox1
             // 
@@ -64,10 +64,13 @@
             this.listBox1.Name = "listBox1";
             this.listBox1.Size = new System.Drawing.Size(387, 160);
             this.listBox1.TabIndex = 2;
+            this.listBox1.SelectedIndexChanged += new System.EventHandler(this.ListBox1_SelectedIndexChanged);
+            this.listBox1.DoubleClick += new System.EventHandler(this.listBox1_DoubleClick);
             // 
             // labelres
             // 
             this.labelres.AutoSize = true;
+            this.labelres.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
             this.labelres.Location = new System.Drawing.Point(31, 301);
             this.labelres.Name = "labelres";
             this.labelres.Size = new System.Drawing.Size(35, 13);

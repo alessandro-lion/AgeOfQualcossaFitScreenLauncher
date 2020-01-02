@@ -11,16 +11,17 @@ namespace AgeOfQualcossaFitScreenLauncher
     {
         private string AOQresparm = "";
         private string AO2resparm = "";
-        private static string AOMX = "C:\\Program Files (x86)\\Microsoft Games\\Age of Mythology\\aomx.exe";
-        private static string AOM = "C:\\Program Files (x86)\\Microsoft Games\\Age of Mythology\\aom.exe";
-        private static string AOE2Conquer = "C:\\Program Files (x86)\\Microsoft Games\\Age of Empires II\\Age2_X1\\age2_x1.Exe";
-        private static string AOE2 = "C:\\Program Files (x86)\\Microsoft Games\\Age of Empires II\\EMPIRES2.EXE";
+        private static string MSGamesFolder = "C:\\Program Files (x86)\\Microsoft Games\\";
+        private static string MSGamesFolderw32 = "C:\\Program Files\\Microsoft Games\\";
+        private static string AOMX = MSGamesFolder+"Age of Mythology\\aomx.exe";
+        private static string AOM = MSGamesFolder+"\\Age of Mythology\\aom.exe";
+        private static string AOE2Conquer = MSGamesFolder + "\\Age of Empires II\\Age2_X1\\age2_x1.Exe";
+        private static string AOE2 = MSGamesFolder + "\\Age of Empires II\\EMPIRES2.EXE";
 
-        private static string AOMXw32 = "C:\\Program Files\\Microsoft Games\\Age of Mythology\\aomx.exe";
-        private static string AOMw32 = "C:\\Program Files\\Microsoft Games\\Age of Mythology\\aom.exe";
-        private static string AOE2Conquerw32 = "C:\\Program Files\\Microsoft Games\\Age of Empires II\\Age2_X1\\age2_x1.Exe";
-        private static string AOE2w32 = "C:\\Program Files\\Microsoft Games\\Age of Empires II\\EMPIRES2.EXE";
-
+        private static string AOMXw32 = MSGamesFolderw32 + "Age of Mythology\\aomx.exe";
+        private static string AOMw32 = MSGamesFolderw32 + "\\Age of Mythology\\aom.exe";
+        private static string AOE2Conquerw32 = MSGamesFolderw32 + "\\Age of Empires II\\Age2_X1\\age2_x1.Exe";
+        private static string AOE2w32 = MSGamesFolderw32 + "\\Age of Empires II\\EMPIRES2.EXE";
 
         private StringCollection gamepath = new StringCollection();
         private StringCollection gamearg = new StringCollection();
@@ -33,11 +34,18 @@ namespace AgeOfQualcossaFitScreenLauncher
 
         private void Form1_Load(object sender, EventArgs e)
         {
-             dx = System.Windows.Forms.Screen.PrimaryScreen.Bounds.Width;
+
+            //TODO:
+            //Loading TXT messages resources
+            //System.Resources.ResourceManager rm = new System.Resources.ResourceManager("WpfApplication3.Properties.Resources", Assembly.GetExecutingAssembly());
+            //MessageBox.Show(rm.GetString("String1"));
+
+            dx = System.Windows.Forms.Screen.PrimaryScreen.Bounds.Width;
              dy = System.Windows.Forms.Screen.PrimaryScreen.Bounds.Height;
             // Checking screen resolution and set AOQresparm
             AOQresparm = " xres=" + dx.ToString()+ " yres="+ dy.ToString();
             labelres.Text = "SIZE:" + AOQresparm;
+
             if ((dx > 1279) && (dy > 1023))
             { AO2resparm = " 1280"; }
             else if ((dx > 1023) && (dy > 767))
@@ -53,25 +61,25 @@ namespace AgeOfQualcossaFitScreenLauncher
             CheckAOGame("Age of Mythology Titan Expansion", AOMX, AOQresparm);
             CheckAOGame("Age of Empires II", AOE2, AO2resparm);
             CheckAOGame("Age of Empires II The Conquer", AOE2Conquer, AO2resparm);
+
             CheckAOGame("Age of Mythology", AOMw32, AOQresparm);
             CheckAOGame("Age of Mythology Titan Expansion", AOMXw32, AOQresparm);
             CheckAOGame("Age of Empires II", AOE2w32, AO2resparm);
             CheckAOGame("Age of Empires II The Conquer", AOE2Conquerw32, AO2resparm);
 
 
-
         }
-        private void CheckAOGame(string Title, string sPath, string Arg)
+        private void CheckAOGame(string Title, string Path, string Arg)
         {
             //If the game exist I add it to the Listbox on the form
             try
 
             { 
-            FileInfo sFile = new FileInfo(sPath);
+            FileInfo sFile = new FileInfo(Path);
             if (sFile.Exists)
             {
                 listBox1.Items.Add(Title);
-                gamepath.Add(sPath);
+                gamepath.Add(Path);
                 gamearg.Add(Arg);
             }
             }
@@ -82,7 +90,7 @@ namespace AgeOfQualcossaFitScreenLauncher
             }
         }
 
-        private void button1_Click(object sender, EventArgs e)
+        private void Button1_Click(object sender, EventArgs e)
         {
             if (listBox1.SelectedIndex >0)
                 {
@@ -92,11 +100,23 @@ namespace AgeOfQualcossaFitScreenLauncher
 
                 startInfo.Arguments = gamearg[listBox1.SelectedIndex];
                 Process.Start(startInfo);
+
+                labelres.Text = "Lancià " + startInfo.FileName + " parm: "+ startInfo.Arguments;
             }
             else
             {
                 labelres.Text = "Seesiona un zugo soea lista!";
             }
+        }
+
+        private void ListBox1_SelectedIndexChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void listBox1_DoubleClick(object sender, EventArgs e)
+        {
+            button1.PerformClick();
         }
     }
 }
