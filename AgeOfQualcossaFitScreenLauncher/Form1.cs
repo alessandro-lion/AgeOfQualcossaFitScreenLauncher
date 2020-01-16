@@ -92,7 +92,7 @@ namespace AgeOfQualcossaFitScreenLauncher
 
         private void Button1_Click(object sender, EventArgs e)
         {
-            if (listBox1.SelectedIndex >0)
+            if (listBox1.SelectedItems.Count >0)
                 {
                 ProcessStartInfo startInfo = new ProcessStartInfo();
                 startInfo.FileName = gamepath[listBox1.SelectedIndex];
