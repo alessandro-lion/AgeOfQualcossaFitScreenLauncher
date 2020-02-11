@@ -23,7 +23,7 @@
     <MapFileExtensions>true</MapFileExtensions>
     <WebPage>publish.htm</WebPage>
     <AutorunEnabled>true</AutorunEnabled>
-    <ApplicationRevision>9</ApplicationRevision>
+    <ApplicationRevision>11</ApplicationRevision>
     <ApplicationVersion>1.0.0.%2a</ApplicationVersion>
     <UseApplicationTrust>false</UseApplicationTrust>
     <PublishWizardCompleted>true</PublishWizardCompleted>
@@ -52,10 +52,10 @@
     <ApplicationIcon>integrity4x_87002.ico</ApplicationIcon>
   </PropertyGroup>
   <PropertyGroup>
-    <ManifestCertificateThumbprint>FFBAA52F904781CDFB7F79EEDDA9374A1F71188F</ManifestCertificateThumbprint>
+    <ManifestCertificateThumbprint>60976FF14E8B0734FC704190D1EE6454A5B3178D</ManifestCertificateThumbprint>
   </PropertyGroup>
   <PropertyGroup>
-    <ManifestKeyFile>AgeOfQualcossaFitScreenLauncher_1_TemporaryKey.pfx</ManifestKeyFile>
+    <ManifestKeyFile>AgeOfQualcossaFitScreenLauncher_2_TemporaryKey.pfx</ManifestKeyFile>
   </PropertyGroup>
   <PropertyGroup>
     <GenerateManifests>true</GenerateManifests>
@@ -67,6 +67,7 @@
   <PropertyGroup>
     <StartupObject>AgeOfQualcossaFitScreenLauncher.Program</StartupObject>
   </PropertyGroup>
+  <PropertyGroup />
   <ItemGroup>
     <Reference Include="System" />
     <Reference Include="System.Core" />
@@ -109,6 +110,7 @@
       <LastGenOutput>AOQFSL.Designer.cs</LastGenOutput>
     </EmbeddedResource>
     <None Include="AgeOfQualcossaFitScreenLauncher_1_TemporaryKey.pfx" />
+    <None Include="AgeOfQualcossaFitScreenLauncher_2_TemporaryKey.pfx" />
     <None Include="AgeOfQualcossaFitScreenLauncher_TemporaryKey.pfx" />
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
