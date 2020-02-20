@@ -67,7 +67,24 @@ namespace AgeOfQualcossaFitScreenLauncher
             CheckAOGame("Age of Empires II", AOE2w32, AO2resparm);
             CheckAOGame("Age of Empires II The Conquer", AOE2Conquerw32, AO2resparm);
 
+            //TODO: FIX BY INSPECTING ACTUAL SYSTEM VOLUMES RATHER THAN HARDCODED DRIVES
+            if (listBox1.Items.Count == 0)
+            {
+                // DRIVE G:
+                String ssearch = "C:\\";
+                String srval = "G:\\";
+                CheckAOGame("Age of Mythology", AOM.Replace(ssearch,srval), AOQresparm);
+                CheckAOGame("Age of Mythology Titan Expansion", AOMX.Replace(ssearch, srval), AOQresparm);
+                CheckAOGame("Age of Empires II", AOE2.Replace(ssearch, srval), AO2resparm);
+                CheckAOGame("Age of Empires II The Conquer", AOE2Conquer.Replace(ssearch, srval), AO2resparm);
 
+                CheckAOGame("Age of Mythology", AOMw32.Replace(ssearch, srval), AOQresparm);
+                CheckAOGame("Age of Mythology Titan Expansion", AOMXw32.Replace(ssearch, srval), AOQresparm);
+                CheckAOGame("Age of Empires II", AOE2w32.Replace(ssearch, srval), AO2resparm);
+                CheckAOGame("Age of Empires II The Conquer", AOE2Conquerw32.Replace(ssearch, srval), AO2resparm);
+
+
+            }
         }
         private void CheckAOGame(string Title, string Path, string Arg)
         {
