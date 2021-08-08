@@ -52,10 +52,10 @@
     <ApplicationIcon>integrity4x_87002.ico</ApplicationIcon>
   </PropertyGroup>
   <PropertyGroup>
-    <ManifestCertificateThumbprint>60976FF14E8B0734FC704190D1EE6454A5B3178D</ManifestCertificateThumbprint>
+    <ManifestCertificateThumbprint>1AD858EBFB8ECBD10209E310F81137642C97FA88</ManifestCertificateThumbprint>
   </PropertyGroup>
   <PropertyGroup>
-    <ManifestKeyFile>AgeOfQualcossaFitScreenLauncher_2_TemporaryKey.pfx</ManifestKeyFile>
+    <ManifestKeyFile>AgeOfQualcossaFitScreenLauncher_TemporaryKey.pfx</ManifestKeyFile>
   </PropertyGroup>
   <PropertyGroup>
     <GenerateManifests>true</GenerateManifests>
@@ -68,6 +68,12 @@
     <StartupObject>AgeOfQualcossaFitScreenLauncher.Program</StartupObject>
   </PropertyGroup>
   <PropertyGroup />
+  <PropertyGroup>
+    <SignAssembly>true</SignAssembly>
+  </PropertyGroup>
+  <PropertyGroup>
+    <AssemblyOriginatorKeyFile>AgeOfQualcossaFitScreenLauncher_TemporaryKey.pfx</AssemblyOriginatorKeyFile>
+  </PropertyGroup>
   <ItemGroup>
     <Reference Include="System" />
     <Reference Include="System.Core" />
@@ -109,7 +115,7 @@
       <Generator>ResXFileCodeGenerator</Generator>
       <LastGenOutput>AOQFSL.Designer.cs</LastGenOutput>
     </EmbeddedResource>
-    <None Include="AgeOfQualcossaFitScreenLauncher_2_TemporaryKey.pfx" />
+    <None Include="AgeOfQualcossaFitScreenLauncher_TemporaryKey.pfx" />
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
       <LastGenOutput>Settings.Designer.cs</LastGenOutput>
